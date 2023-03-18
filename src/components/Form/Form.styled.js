@@ -25,7 +25,7 @@ export const AddContactButton = styled.button`
   display: flex;
   // justify-content: space-between;
   // flex-direction: column;
-  align-items: center;
+  // align-items: center;
   // gap: 10px;
   flex-basis: calc(100% / 3 - 20px);
   padding: 8px;

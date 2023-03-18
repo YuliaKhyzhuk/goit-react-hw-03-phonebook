@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 export const FilterContainer = styled.label`
+width: 300px;
+
   font-size: 12px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 16px;
+  padding: 0;
 `;
 
 export const FilterInput = styled.input`
+width: 100%;
   font-size: 12px;
   cursor: pointer;
   outline: none;
