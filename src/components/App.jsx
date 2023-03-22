@@ -21,26 +21,29 @@ export class App extends Component {
     filter: '',
   };
 
-componentDidMount() {
-  console.log('App is mounted');
+  componentDidMount() {
+    // console.log('App is mounted');
 
-  const contacts = localStorage.getItem('contacts');
-  const parsedContacts = JSON.parse(contacts);
-
-  if (parsedContacts) {
-    this.setState({ contacts: parsedContacts });
-  }  
-}
-
-componentDidUpdate(prevProps, prevState) {
-  console.log('App is updated');
-
-  if (this.state.contacts !== prevState.contacts) {
-    console.log('Contacts field updated');
-
-    localStorage.setItem('todos', JSON.stringify(this.state.contacts));
+    const localStorageContacts = localStorage.getItem('contacts');
+    const parsedLocalStorageContacts = JSON.parse(localStorageContacts);
+    // console.log(parsedLocalStorageContacts);
+    
+    if (parsedLocalStorageContacts) {
+      this.setState({ contacts: parsedLocalStorageContacts });
+      return;
+    }
+    this.setState({ contacts: testContacts });
   }
-}
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App is updated');
+
+    if (this.state.contacts !== prevState.contacts) {
+      // console.log('Contacts field updated');
+
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   formSubmitHandler = ({ name, number }) => {
     // console.log("test:", contactData);
